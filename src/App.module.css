@@ -1,0 +1,40 @@
+.siteMain {
+  margin: 0 15px;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  display: grid;
+}
+
+@media only screen and (min-width: 1200px) {
+  .siteMain {
+    margin: 0 165px;
+  }
+
+  .mainContainer {
+    grid-template-areas:
+      'register items'
+      'register items'
+      'register items'
+      'panel items';
+  }
+
+  .registerContainer {
+    grid-area: register;
+  }
+
+  .progressPanel {
+    grid-area: panel;
+  }
+
+  .itemsContainer {
+    max-width: 100%;
+    grid-area: items;
+    margin: auto 0 0 115px;
+  }
+
+  .formContainer {
+    height: 336px;
+  }
+}

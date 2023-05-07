@@ -1,0 +1,52 @@
+.formCredit {
+  margin-top: 24px;
+  width: 100%;
+  display: none;
+}
+
+.formTitle {
+  margin: 24px 0;
+  font-size: 24px;
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+}
+
+.inputLayout {
+  display: flex;
+  grid-gap: 30px;
+}
+
+.inputGroup {
+  width: 100%;
+}
+
+.inputLabel {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.inputText {
+  height: 40px;
+  font-size: 12px;
+  padding-left: 9px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+  .formAddress {
+    margin-top: 64px;
+  }
+
+  .inputText {
+    width: 350px;
+  }
+
+  .inputLayout:last-child .inputText {
+    width: 100%;
+  }
+}

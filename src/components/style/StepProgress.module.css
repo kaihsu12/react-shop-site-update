@@ -1,0 +1,58 @@
+.registerTitle {
+  margin: 24px 0;
+  font-size: 24px;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  grid-gap: 32px;
+  width: 100%;
+}
+
+.progressGroup {
+  display: flex;
+  align-items: center;
+}
+
+.number {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.progressGroup:first-child .number {
+  background-color: black;
+  color: white;
+}
+
+.status {
+  margin-left: 8px;
+  font-size: 16px;
+  display: none;
+}
+
+.progressBar {
+  height: 3px;
+  flex: 1;
+  background-color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  .registerTitle {
+    margin: 48px 0;
+    font-size: 32px;
+  }
+
+  .status {
+    /*margin-left: 8px;
+    font-size: 16px;*/
+    display: inline-block;
+  }
+}

@@ -1,0 +1,42 @@
+.controlContainer {
+  border-top: 1px solid #e6e6eb;
+  padding-top: 24px;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+}
+
+.buttonGroup:nth-child(2),
+.buttonGroup:nth-child(3) {
+  display: none;
+}
+
+.next,
+.prev {
+  display: flex;
+  align-items: center;
+  grid-gap: 13.5px;
+  border: none;
+  font-size: 14px;
+}
+
+.next {
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #f67599;
+  color: white;
+  height: 46px;
+  width: 156px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.next:first-child {
+  width: 100%;
+}
+
+.prev {
+  background-color: transparent;
+}
