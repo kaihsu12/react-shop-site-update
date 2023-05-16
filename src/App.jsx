@@ -23,18 +23,18 @@ function App() {
       <main className={classes.siteMain}>
         <div className={classes.mainContainer}>
           <section className={classes.registerContainer}>
-            <StepProgress />
+            <StepProgress stepNum={step} />
             <section className={classes.formContainer}>
-              <InfoOne />
-              <InfoTwo />
-              <InfoThree />
+              {step === 0 && <InfoOne />}
+              {step === 1 && <InfoTwo />}
+              {step === 2 && <InfoThree />}
             </section>
           </section>
           <div className={classes.itemsContainer}>
             <Cart />
           </div>
           <div className={classes.progressPanel}>
-            <ProgressControl />
+            <ProgressControl onStepControl={handleBtnControl} stepNum={step} />
           </div>
         </div>
       </main>
