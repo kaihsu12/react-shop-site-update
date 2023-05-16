@@ -62,6 +62,7 @@ function Items({ renderItems, onCounter }) {
 }
 
 function Cart() {
+  const [items, updateItems] = useImmer(itemData);
   return (
     <section className={classes.cartContainer}>
       <h3 className={classes.cartTitle}>購物籃</h3>
