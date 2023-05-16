@@ -20,10 +20,6 @@ const itemData = [
   },
 ];
 
-const priceSum = itemData.reduce((acc, item) => {
-  return acc + item.price;
-}, 0);
-
 function Items({ renderItems, onCounter }) {
   return renderItems.map((item) => {
     return (
@@ -79,6 +75,11 @@ function Cart() {
       });
     }
   }
+
+  const priceSum = items.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
+
   return (
     <section className={classes.cartContainer}>
       <h3 className={classes.cartTitle}>購物籃</h3>
