@@ -63,6 +63,22 @@ function Items({ renderItems, onCounter }) {
 
 function Cart() {
   const [items, updateItems] = useImmer(itemData);
+
+  function handleQuantity(e) {
+    if (e.target.dataset.counter === 'plus') {
+      updateItems((draft) => {
+        const itemOne = draft.find((t) => t.id === e.target.dataset.count);
+        itemOne.quantity++;
+      });
+    } else if (e.target.dataset.counter === 'minus') {
+      updateItems((items) => {
+        const itemOne = items.find((t) => t.id === e.target.dataset.count);
+        const index = items.findIndex((t) => t.id === e.target.dataset.count);
+        itemOne.quantity > 0 && itemOne.quantity--;
+        itemOne.quantity === 0 && items.splice(index, 1);
+      });
+    }
+  }
   return (
     <section className={classes.cartContainer}>
       <h3 className={classes.cartTitle}>購物籃</h3>
