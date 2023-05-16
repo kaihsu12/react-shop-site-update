@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.number {
+.numberOff {
   width: 24px;
   height: 24px;
   border: 1px solid black;
@@ -27,9 +27,34 @@
   font-size: 14px;
 }
 
-.progressGroup:first-child .number {
+.numberOn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
   background-color: black;
   color: white;
+}
+
+.checkContainer {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.checkImg {
+  width: 15px;
+  height: auto;
 }
 
 .status {
