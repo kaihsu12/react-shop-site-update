@@ -12,7 +12,7 @@ Alpha Shop is a project for online clothing shpping built with React.js. It's st
 2. Clone the project from GitHub repository
 
 ```
-$ git clone https://github.com/kaihsu12/react-shop-site-02.git
+$ git clone https://github.com/kaihsu12/react-shop-site-03.git
 ```
 
 3. Install the package needed to run the project
