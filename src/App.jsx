@@ -7,6 +7,8 @@ import ProgressControl from './components/ProgressControl';
 import Cart from './components/Cart';
 
 function App() {
+  const [step, setStep] = useState(0);
+
   return (
     <>
       <main className={classes.siteMain}>
