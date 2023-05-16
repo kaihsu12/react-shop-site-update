@@ -9,6 +9,15 @@ import Cart from './components/Cart';
 function App() {
   const [step, setStep] = useState(0);
 
+  function handleBtnControl(e) {
+    e.preventDefault();
+    if (e.target.dataset.step === 'next') {
+      setStep(step + 1);
+    } else if (e.target.dataset.step === 'prev') {
+      setStep(step - 1);
+    }
+  }
+
   return (
     <>
       <main className={classes.siteMain}>
