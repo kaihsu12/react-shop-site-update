@@ -32,15 +32,26 @@ function Items({ renderItems, onCounter }) {
         className={classes.productContainer}
         data-count={item.id}
         data-price={item.price}
+        onClick={onCounter}
       >
         <img className={classes.itemPic} src={item.img} alt="" />
         <div className={classes.productInfo}>
           <div className={classes.productName}>{item.name}</div>
           <div className={classes.productQuantity}>
             <div className={classes.productControl}>
-              <img src={MinusSign} alt="" />
+              <img
+                src={MinusSign}
+                alt=""
+                data-count={item.id}
+                data-counter="minus"
+              />
               <span className={classes.productCount}>{item.quantity}</span>
-              <img src={PlusSign} alt="" />
+              <img
+                src={PlusSign}
+                alt=""
+                data-count={item.id}
+                data-counter="plus"
+              />
             </div>
           </div>
           <div className={classes.price}>${item.price}</div>
