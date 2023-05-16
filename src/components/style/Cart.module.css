@@ -55,7 +55,7 @@
 .productControl {
   display: flex;
   align-items: center;
-  grid-gap: 27px;
+  grid-gap: 12px;
 }
 
 .productControl img {
