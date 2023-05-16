@@ -8,11 +8,6 @@
   align-items: center;
 }
 
-.buttonGroup:nth-child(2),
-.buttonGroup:nth-child(3) {
-  display: none;
-}
-
 .next,
 .prev {
   display: flex;
@@ -39,4 +34,10 @@
 
 .prev {
   background-color: transparent;
+}
+
+@media only screen and (min-width: 1200px) {
+  .next:first-child {
+    width: 156px;
+  }
 }
