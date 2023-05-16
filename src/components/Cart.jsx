@@ -85,7 +85,7 @@ function Cart() {
       <h3 className={classes.cartTitle}>購物籃</h3>
 
       <section className={classes.productList} data-total-price="0">
-        <Items renderItems={itemData} />
+        <Items renderItems={items} onCounter={handleQuantity} />
       </section>
 
       <section className={classes.cartInfo}>
