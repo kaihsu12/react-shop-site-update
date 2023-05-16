@@ -1,4 +1,5 @@
 import classes from './style/StepProgress.module.css';
+import checkedImg from '../svg/checked.svg';
 
 function Step(props) {
   return (
