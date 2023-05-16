@@ -36,7 +36,7 @@ function StepFinish({ phase, status }) {
   );
 }
 
-function StepProgress() {
+function StepProgress({ stepNum }) {
   return (
     <>
       <h2 className={classes.registerTitle}>結帳</h2>
