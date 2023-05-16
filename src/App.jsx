@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import classes from './App.module.css';
 import StepProgress from './components/StepProgress';
 import InfoOne from './components/InfoOne';
