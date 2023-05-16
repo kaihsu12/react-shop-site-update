@@ -4,7 +4,7 @@
 
 # Intro
 
-Alpha Shop is a project for online clothing shpping built with React.js. It's still a static website only demonstrating the payment page at the moment.
+Alpha Shop is a project for online clothing shpping built with React.js. It's still not a complete website with it's full functionality. It only demonstrating the payment page at the moment.
 
 ## Getting Start
 
