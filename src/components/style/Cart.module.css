@@ -58,6 +58,10 @@
   grid-gap: 27px;
 }
 
+.productControl img {
+  cursor: pointer;
+}
+
 .cartInfo {
   display: flex;
   align-items: center;
