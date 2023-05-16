@@ -1,5 +1,5 @@
 import classes from './style/ProgressControl.module.css';
-import preArrow from '../svg/prev-arrow.svg';
+import prevArrow from '../svg/prev-arrow.svg';
 import nextArrow from '../svg/next-arrow.svg';
 
 function ProgressControl({ onStepControl, stepNum }) {
