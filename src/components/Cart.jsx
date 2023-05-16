@@ -24,7 +24,7 @@ const priceSum = itemData.reduce((acc, item) => {
   return acc + item.price;
 }, 0);
 
-function Items({ renderItems }) {
+function Items({ renderItems, onCounter }) {
   return renderItems.map((item) => {
     return (
       <div
