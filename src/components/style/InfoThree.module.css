@@ -1,7 +1,6 @@
 .formCredit {
   margin-top: 24px;
   width: 100%;
-  display: none;
 }
 
 .formTitle {
@@ -38,7 +37,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .formAddress {
+  .formCredit {
     margin-top: 64px;
   }
 
