@@ -1,13 +1,37 @@
 import classes from './style/StepProgress.module.css';
 import checkedImg from '../svg/checked.svg';
 
-function Step(props) {
+function StepOn({ phase, number, status }) {
   return (
-    <span className={classes.progressGroup} data-phase={props.phase}>
+    <span className={classes.progressGroup} data-phase={phase}>
       <span className={classes.progressIcon}>
-        <span className={classes.number}>{props.number}</span>
+        <span className={classes.numberOn}>{number}</span>
       </span>
-      <span className={classes.status}>{props.status}</span>
+      <span className={classes.status}>{status}</span>
+    </span>
+  );
+}
+
+function StepOff({ phase, number, status }) {
+  return (
+    <span className={classes.progressGroup} data-phase={phase}>
+      <span className={classes.progressIcon}>
+        <span className={classes.numberOff}>{number}</span>
+      </span>
+      <span className={classes.status}>{status}</span>
+    </span>
+  );
+}
+
+function StepFinish({ phase, status }) {
+  return (
+    <span className={classes.progressGroup} data-phase={phase}>
+      <span className={classes.progressIcon}>
+        <span className={classes.checkContainer}>
+          <img className={classes.checkImg} src={checkedImg} alt="" />
+        </span>
+      </span>
+      <span className={classes.status}>{status}</span>
     </span>
   );
 }
