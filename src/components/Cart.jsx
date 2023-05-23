@@ -42,9 +42,9 @@ function Items({ renderItems, onCounter }) {
 }
 
 function Cart({ onCounter }) {
-  const itemData = useContext(CartContext);
+  const cartItems = useContext(CartContext);
 
-  const priceSum = itemData.reduce((acc, item) => {
+  const priceSum = cartItems.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
 
@@ -53,7 +53,7 @@ function Cart({ onCounter }) {
       <h3 className={classes.cartTitle}>購物籃</h3>
 
       <section className={classes.productList} data-total-price="0">
-        <Items renderItems={itemData} onCounter={onCounter} />
+        <Items renderItems={cartItems} onCounter={onCounter} />
       </section>
 
       <section className={classes.cartInfo}>
