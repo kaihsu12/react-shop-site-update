@@ -1,24 +1,8 @@
-import { useImmer } from 'use-immer';
 import classes from './style/Cart.module.css';
 import PlusSign from '../svg/plus.svg';
 import MinusSign from '../svg/minus.svg';
-
-const itemData = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1,
-  },
-];
+import { CartContext } from './CartContext';
+import { useContext } from 'react';
 
 function Items({ renderItems, onCounter }) {
   return renderItems.map((item) => {
@@ -57,26 +41,10 @@ function Items({ renderItems, onCounter }) {
   });
 }
 
-function Cart() {
-  const [items, updateItems] = useImmer(itemData);
+function Cart({ onCounter }) {
+  const itemData = useContext(CartContext);
 
-  function handleQuantity(e) {
-    if (e.target.dataset.counter === 'plus') {
-      updateItems((draft) => {
-        const itemOne = draft.find((t) => t.id === e.target.dataset.count);
-        itemOne.quantity++;
-      });
-    } else if (e.target.dataset.counter === 'minus') {
-      updateItems((items) => {
-        const itemOne = items.find((t) => t.id === e.target.dataset.count);
-        const index = items.findIndex((t) => t.id === e.target.dataset.count);
-        itemOne.quantity > 0 && itemOne.quantity--;
-        itemOne.quantity === 0 && items.splice(index, 1);
-      });
-    }
-  }
-
-  const priceSum = items.reduce((acc, item) => {
+  const priceSum = itemData.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
 
@@ -85,7 +53,7 @@ function Cart() {
       <h3 className={classes.cartTitle}>購物籃</h3>
 
       <section className={classes.productList} data-total-price="0">
-        <Items renderItems={items} onCounter={handleQuantity} />
+        <Items renderItems={itemData} onCounter={onCounter} />
       </section>
 
       <section className={classes.cartInfo}>
