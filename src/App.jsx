@@ -8,11 +8,18 @@ import InfoThree from './components/InfoThree';
 import ProgressControl from './components/ProgressControl';
 import Cart from './components/Cart';
 import { CartContext } from './components/CartContext';
+import { CardContext } from './components/CardContext';
 
 function App() {
   const [step, setStep] = useState(0);
   const items = useContext(CartContext);
   const [cartItems, setCartItems] = useImmer(items);
+  const cardDetail = useContext(CardContext);
+  const [cardInfo, setCardInfo] = useState(cardDetail);
+
+  const totalPrice = cartItems.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
 
   function handleBtnControl(e) {
     e.preventDefault();
@@ -39,25 +46,50 @@ function App() {
     }
   }
 
+  function handleCardInput(value, label) {
+    setCardInfo((prevInput) => {
+      return prevInput.map((input) => {
+        if (input.label === label) {
+          return {
+            ...input,
+            inputValue: value,
+          };
+        }
+        return input;
+      });
+    });
+  }
+
+  function handleInfoOutput() {
+    cardInfo.map((input) => console.log(`${input.label}: ${input.inputValue}`));
+    console.log(`購物車總金額：${totalPrice}`);
+  }
+
   return (
     <>
       <main className={classes.siteMain}>
         <div className={classes.mainContainer}>
           <section className={classes.registerContainer}>
             <StepProgress stepNum={step} />
-            <section className={classes.formContainer}>
-              {step === 0 && <InfoOne />}
-              {step === 1 && <InfoTwo />}
-              {step === 2 && <InfoThree />}
-            </section>
+            <CardContext.Provider value={cardInfo}>
+              <section className={classes.formContainer}>
+                {step === 0 && <InfoOne />}
+                {step === 1 && <InfoTwo />}
+                {step === 2 && <InfoThree onCardInput={handleCardInput} />}
+              </section>
+            </CardContext.Provider>
           </section>
           <CartContext.Provider value={cartItems}>
             <div className={classes.itemsContainer}>
-              <Cart onCounter={handleQuantity} />
+              <Cart onCounter={handleQuantity} sumPrice={totalPrice} />
             </div>
           </CartContext.Provider>
           <div className={classes.progressPanel}>
-            <ProgressControl onStepControl={handleBtnControl} stepNum={step} />
+            <ProgressControl
+              onStepControl={handleBtnControl}
+              onOutput={handleInfoOutput}
+              stepNum={step}
+            />
           </div>
         </div>
       </main>
