@@ -2,7 +2,7 @@ import classes from './style/ProgressControl.module.css';
 import prevArrow from '../svg/prev-arrow.svg';
 import nextArrow from '../svg/next-arrow.svg';
 
-function ProgressControl({ onStepControl, stepNum }) {
+function ProgressControl({ onStepControl, onOutput, stepNum }) {
   if (stepNum === 0) {
     return (
       <section className={classes.controlContainer}>
@@ -53,7 +53,9 @@ function ProgressControl({ onStepControl, stepNum }) {
             <img src={prevArrow} alt="" data-step="prev" />
             上一步
           </button>
-          <button className={classes.next}>確認下單</button>
+          <button className={classes.next} onClick={onOutput}>
+            確認下單
+          </button>
         </section>
       </section>
     );
