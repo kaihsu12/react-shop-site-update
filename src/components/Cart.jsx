@@ -41,12 +41,8 @@ function Items({ renderItems, onCounter }) {
   });
 }
 
-function Cart({ onCounter }) {
+function Cart({ onCounter, sumPrice }) {
   const cartItems = useContext(CartContext);
-
-  const priceSum = cartItems.reduce((acc, item) => {
-    return acc + item.price * item.quantity;
-  }, 0);
 
   return (
     <section className={classes.cartContainer}>
@@ -62,7 +58,7 @@ function Cart({ onCounter }) {
       </section>
       <section className={classes.cartInfo}>
         <div class="text">小計</div>
-        <div class="price">${priceSum}</div>
+        <div class="price">${sumPrice}</div>
       </section>
     </section>
   );
