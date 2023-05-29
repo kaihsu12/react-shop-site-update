@@ -46,7 +46,7 @@ function StepProgress({ stepNum }) {
             <StepOn phase="address" number="1" status="寄送地址" />
             <span className={classes.progressBar} data-order="1"></span>
             <StepOff phase="shipping" number="2" status="運送方式" />
-            <span class={classes.progressBar} data-order="2"></span>
+            <span className={classes.progressBar} data-order="2"></span>
             <StepOff phase="credit-card" number="3" status="付款資訊" />
           </>
         )}
@@ -55,7 +55,7 @@ function StepProgress({ stepNum }) {
             <StepFinish phase="address" number="1" status="寄送地址" />
             <span className={classes.progressBar} data-order="1"></span>
             <StepOn phase="shipping" number="2" status="運送方式" />
-            <span class={classes.progressBar} data-order="2"></span>
+            <span className={classes.progressBar} data-order="2"></span>
             <StepOff phase="credit-card" number="3" status="付款資訊" />
           </>
         )}
@@ -64,7 +64,7 @@ function StepProgress({ stepNum }) {
             <StepFinish phase="address" number="1" status="寄送地址" />
             <span className={classes.progressBar} data-order="1"></span>
             <StepFinish phase="shipping" number="2" status="運送方式" />
-            <span class={classes.progressBar} data-order="2"></span>
+            <span className={classes.progressBar} data-order="2"></span>
             <StepOn phase="credit-card" number="3" status="付款資訊" />
           </>
         )}

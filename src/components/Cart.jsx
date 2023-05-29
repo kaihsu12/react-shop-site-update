@@ -53,12 +53,12 @@ function Cart({ onCounter, sumPrice }) {
       </section>
 
       <section className={classes.cartInfo}>
-        <div class="text">運費</div>
-        <div class="price">免費</div>
+        <div className="text">運費</div>
+        <div className="price">免費</div>
       </section>
       <section className={classes.cartInfo}>
-        <div class="text">小計</div>
-        <div class="price">${sumPrice}</div>
+        <div className="text">小計</div>
+        <div className="price">${sumPrice}</div>
       </section>
     </section>
   );

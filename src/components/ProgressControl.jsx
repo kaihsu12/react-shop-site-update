@@ -6,7 +6,7 @@ function ProgressControl({ onStepControl, onOutput, stepNum }) {
   if (stepNum === 0) {
     return (
       <section className={classes.controlContainer}>
-        <section class={classes.buttonGroup} data-phase="address">
+        <section className={classes.buttonGroup} data-phase="address">
           <button
             className={classes.next}
             onClick={onStepControl}
@@ -21,7 +21,7 @@ function ProgressControl({ onStepControl, onOutput, stepNum }) {
   } else if (stepNum === 1) {
     return (
       <section className={classes.controlContainer}>
-        <section class={classes.buttonGroup} data-phase="shipping">
+        <section className={classes.buttonGroup} data-phase="shipping">
           <button
             className={classes.prev}
             onClick={onStepControl}
@@ -44,7 +44,7 @@ function ProgressControl({ onStepControl, onOutput, stepNum }) {
   } else if (stepNum === 2) {
     return (
       <section className={classes.controlContainer}>
-        <section class={classes.buttonGroup} data-phase="credit-card">
+        <section className={classes.buttonGroup} data-phase="credit-card">
           <button
             className={classes.prev}
             onClick={onStepControl}
