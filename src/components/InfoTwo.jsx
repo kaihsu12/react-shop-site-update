@@ -6,7 +6,12 @@ function InfoTwo() {
       <h3 className={classes.formTitle}>運送方式</h3>
       <section className={classes.formBody}>
         <label className={classes.radioGroup} data-price="0">
-          <input id="shipping-standard" type="radio" name="shipping" checked />
+          <input
+            id="shipping-standard"
+            type="radio"
+            name="shipping"
+            defaultChecked={true}
+          />
           <div className={classes.radioInfo}>
             <div className="col col-12">
               <div className={classes.text}>標準運送</div>
