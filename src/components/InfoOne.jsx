@@ -9,10 +9,8 @@ function InfoOne() {
           <div className={classes.inputGroup}>
             <div className={classes.inputLabel}>稱謂</div>
             <div className="select-container">
-              <select className={classes.inputBox}>
-                <option value="mr" selected>
-                  先生
-                </option>
+              <select className={classes.inputBox} defaultValue="mr">
+                <option value="mr">先生</option>
                 <option value="ms">女士</option>
                 <option value="mx">不明</option>
               </select>
@@ -49,7 +47,7 @@ function InfoOne() {
           <div className={classes.inputGroup}>
             <div className={classes.inputLabel}>縣市</div>
             <div className="select-container">
-              <select className={classes.inputBox} required>
+              <select className={classes.inputBox} defaultValue="" required>
                 <option value="">請選擇縣市</option>
                 <option value="KLU">基隆市</option>
                 <option value="TPH">新北市</option>
