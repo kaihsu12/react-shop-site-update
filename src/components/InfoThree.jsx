@@ -14,8 +14,8 @@ function InfoThree({ onCardInput }) {
           )
           .map((input) => {
             return (
-              <div className={classes.inputLayout}>
-                <div className={classes.inputGroup}>
+              <div className={classes.inputLayout} key={input.id}>
+                <div className={classes.inputGroup} key={input.id}>
                   <div className={classes.inputLabel}>{input.label}</div>
                   <input
                     className={classes.inputText}
@@ -36,7 +36,7 @@ function InfoThree({ onCardInput }) {
             )
             .map((input) => {
               return (
-                <div className={classes.inputGroup}>
+                <div className={classes.inputGroup} key={input.id}>
                   <div className={classes.inputLabel}>{input.label}</div>
                   <input
                     className={classes.inputText}
